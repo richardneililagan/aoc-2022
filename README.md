@@ -2,7 +2,7 @@ aoc-2022
 ===
 
 This are my completed solutions for [Advent of Code 2022][aoc2022].
-For this year, I've committed to using [Ruby] to solve the problems.
+For this year, I've committed to using [Ruby][ruby] to solve the problems.
 
 The codebase uses [aoc_rb][aoc_rb] to scaffold and manage the overhead effort
 associated with solving AoC problems (e.g. parsing input files).
@@ -15,3 +15,4 @@ associated with solving AoC problems (e.g. parsing input files).
 [mastodon]: https://hachyderm.io/@techlifemusic
 [aoc_rb]: https://github.com/pacso/aoc_rb
 [aoc2022]: https://adventofcode.com/2022
+[ruby]: https://www.ruby-lang.org
