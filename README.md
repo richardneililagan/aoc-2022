@@ -9,6 +9,16 @@ associated with solving AoC problems (e.g. parsing input files).
 
 ---
 
+## Benchmarks
+
+> Benchmarks measured using `Benchmark.bmbm`.
+
+|           | Part 1     | Part 2     |
+|:----------|-----------:|-----------:|
+| Day 01    | `0.001029` | `0.001001` |
+
+---
+
 [website][website] &middot; [@techlifemusic@hachyderm.io][mastodon]
 
 [website]: https://richardneililagan.com

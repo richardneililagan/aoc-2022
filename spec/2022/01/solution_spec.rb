@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'benchmark'
 require 'spec_helper'
 
 RSpec.describe Year2022::Day01 do
@@ -34,6 +35,22 @@ RSpec.describe Year2022::Day01 do
     it 'returns the correct answer from examples' do
       solution = described_class.part_2(example_input)
       expect(solution).to eq(45_000)
+    end
+  end
+
+  describe 'benchmarks' do
+    it 'performs benchmarks' do
+      print '2022 D1'
+
+      Benchmark.bmbm do |benchmark|
+        benchmark.report('Part 1:') do
+          described_class.part_1(input)
+        end
+
+        benchmark.report('Part 2:') do
+          described_class.part_2(input)
+        end
+      end
     end
   end
 end
