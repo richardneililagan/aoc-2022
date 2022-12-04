@@ -24,18 +24,6 @@ RSpec.describe Year2022::Day01 do
     EOF
   end
 
-  def run_benchmarks(solution_class)
-    Benchmark.bmbm do |benchmark|
-      benchmark.report("Part 1:") do
-        solution_class.part_1(input)
-      end
-
-      benchmark.report("Part 2:") do
-        solution_class.part_2(input)
-      end
-    end
-  end
-
   describe "part 1" do
     it "returns the correct answer from examples" do
       solution = described_class.part_1(example_input)
@@ -52,7 +40,6 @@ RSpec.describe Year2022::Day01 do
 
   describe "benchmarks" do
     it "performs benchmarks", benchmark: true do
-      print "2022 D1"
       run_benchmarks described_class
     end
   end

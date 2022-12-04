@@ -1,5 +1,4 @@
-aoc-2022
-===
+# aoc-2022
 
 This are my completed solutions for [Advent of Code 2022][aoc2022].
 For this year, I've committed to using [Ruby][ruby] to solve the problems.
@@ -13,10 +12,12 @@ associated with solving AoC problems (e.g. parsing input files).
 
 > Benchmarks measured using `Benchmark.bmbm`.
 
-|           | Part 1     | Part 2     |
-|:----------|-----------:|-----------:|
-| Day 01    | `0.001029` | `0.001001` |
-| Day 02    | `0.004703` | `0.001792` |
+|        |     Part 1 |     Part 2 |
+| :----- | ---------: | ---------: |
+| Day 01 | `0.000566` | `0.000560` |
+| Day 02 | `0.002685` | `0.001307` |
+| Day 03 | `0.000872` | `0.000643` |
+| Day 04 | `0.000734` | `0.000956` |
 
 ---
 
