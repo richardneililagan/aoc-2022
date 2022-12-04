@@ -1,0 +1,25 @@
+require:
+  - standard
+  - rubocop-rspec
+
+inherit_gem:
+  standard: config/base.yml
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - node_modules/**/*
+    - public/**/*
+    - bin/**/*
+
+# :: General configuration
+Style/Documentation:
+  Enabled: false
+
+# :: RSpec configuration
+RSpec:
+  Enabled: true
+RSpec/DescribeClass:
+  Enabled: false # ignore missing comments on classes in tests
+RSpec/FilePath:
+  Enabled: false
