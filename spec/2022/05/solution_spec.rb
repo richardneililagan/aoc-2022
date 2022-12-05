@@ -31,4 +31,10 @@ RSpec.describe Year2022::Day05 do
       expect(solution).to eq("MCD")
     end
   end
+
+  describe "benchmarks", benchmark: true do
+    it "performs benchmarks" do
+      run_benchmarks described_class
+    end
+  end
 end
