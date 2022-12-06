@@ -30,4 +30,10 @@ RSpec.describe Year2022::Day06 do
       expect(described_class.part_2(sample_05)).to eq(26)
     end
   end
+
+  describe "benchmarks", benchmark: true do
+    it "performs benchmarks" do
+      run_benchmarks described_class
+    end
+  end
 end
