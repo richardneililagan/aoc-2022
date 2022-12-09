@@ -17,6 +17,19 @@ RSpec.describe Year2022::Day09 do
     EOF
   }
 
+  let(:example_input_2) {
+    <<~EOF
+      R 5
+      U 8
+      L 8
+      D 3
+      R 17
+      D 10
+      L 25
+      U 20
+    EOF
+  }
+
   describe "part 1" do
     it "returns correct answers for samples" do
       solution = described_class.part_1(example_input)
@@ -25,12 +38,20 @@ RSpec.describe Year2022::Day09 do
   end
 
   describe "part 2" do
-    # it "returns nil for the example input" do
-    #   expect(described_class.part_2(example_input)).to be_nil
-    # end
+    it "returns correct answers for shorter sample" do
+      solution = described_class.part_2(example_input)
+      expect(solution).to eq(1)
+    end
 
-    # it "returns nil for my input" do
-    #   expect(described_class.part_2(input)).to be_nil
-    # end
+    it "returns correct answers for longer sample" do
+      solution = described_class.part_2(example_input_2)
+      expect(solution).to eq(36)
+    end
+  end
+
+  describe "benchmarks", benchmark: true do
+    it "performs benchmarks" do
+      run_benchmarks described_class
+    end
   end
 end

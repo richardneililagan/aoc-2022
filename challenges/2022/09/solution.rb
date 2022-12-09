@@ -30,19 +30,14 @@ module Year2022
           if should_tail_move?(h, t)
             t = t.clone
 
-            # :: Diagonal tail movement
-            if h[0] != t[0] && h[1] != t[1]
-              t[0] = t[0] + ((h[0] - t[0]) / (h[0] - t[0]).abs)
-              t[1] = t[1] + ((h[1] - t[1]) / (h[1] - t[1]).abs)
-
             # :: Horizontal tail movement
-            elsif h[0] != t[0]
+            if h[0] != t[0]
               t[0] = t[0] + ((h[0] - t[0]) / (h[0] - t[0]).abs)
+            end
 
             # :: Vertical tail movement
-            elsif h[1] != t[1]
+            if h[1] != t[1]
               t[1] = t[1] + ((h[1] - t[1]) / (h[1] - t[1]).abs)
-
             end
 
             # :: Register new tail position
@@ -55,7 +50,47 @@ module Year2022
     end
 
     def part_2
-      nil
+      knots = Array.new(10).map { [0, 0] }
+      positions_visited = Set.new
+      positions_visited << knots.last.clone
+
+      data.each do |line|
+        direction, count = line.match(/^(?<direction>[A-Z])\s(?<count>\d+)$/).captures
+        step = @@direction_step[direction]
+
+        (0...(count.to_i)).each do
+          knots.each_with_index do |h, i|
+            # :: Skip the very last knot in the chain
+            #    because nothing comes after.
+            next if i == knots.length - 1
+
+            t = knots[i + 1]
+
+            # :: If this is the root head, then let's move it accordingly.
+            if i == 0
+              _h = h.zip(step).map { |m, n| m + n }
+              h[0] = _h[0]
+              h[1] = _h[1]
+            end
+
+            if should_tail_move?(h, t)
+              # :: Horizontal tail movement
+              if h[0] != t[0]
+                t[0] = t[0] + ((h[0] - t[0]) / (h[0] - t[0]).abs)
+              end
+
+              # :: Vertical tail movement
+              if h[1] != t[1]
+                t[1] = t[1] + ((h[1] - t[1]) / (h[1] - t[1]).abs)
+              end
+            end
+          end
+
+          positions_visited << knots.last.clone
+        end
+      end
+
+      positions_visited.count
     end
 
     private

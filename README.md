@@ -22,6 +22,7 @@ associated with solving AoC problems (e.g. parsing input files).
 | Day 06 | `0.000386` | `0.002131` |
 | Day 07 | `0.000933` | `0.001020` |
 | Day 08 | `0.004036` | `0.042685` |
+| Day 09 | `0.011283` | `0.053863` |
 
 ---
 
